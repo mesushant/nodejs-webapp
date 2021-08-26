@@ -9,6 +9,8 @@ const staticPath = path.join(__dirname, '../public');
 const viewsPath= path.join(__dirname, '../templates/views');
 const partialsPath= path.join(__dirname, '../templates/partials');
 
+// port
+const port = process.env.PORT || 5000;
 
 const app = express();
 console.log(staticPath);
@@ -94,7 +96,7 @@ app.get('*', (req, res)=>{
     });
 });
 
-app.listen(5000, ()=>{
-    console.log("server started on port 5000...");
+app.listen(port, ()=>{
+    console.log("server started on port ", port);
 });
 
